@@ -6,7 +6,7 @@ export default function Projects() {
         {
             title: "Criador de Contratos",
             description: "Automação para criação de contrato de prestação de serviços, gerando documentos personalizados com base em templates e dados fornecidos pelo usuário.",
-            tags: ["NBN", "ZapSign", "ChatGpt", "Node.js"],
+            tags: ["N8N", "ZapSign", "ChatGpt", "Node.js"],
         },
         {
             title: "Crowdfunding de Energia",
