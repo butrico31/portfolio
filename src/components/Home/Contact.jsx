@@ -44,7 +44,7 @@ const Title = styled.h2`
     font-size: 2.5rem;
     font-weight: 700;
     font-family: 'Neocrash', sans-serif;
-    color: var(--text-color);
+    color: rgba(168,85,247,0.95) ;
     margin-bottom: 1.5rem;
     
     @media (max-width: 768px) {

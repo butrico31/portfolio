@@ -40,26 +40,31 @@ body {
 @font-face {
   font-family: "Blacksword";
   src: url("./assets/fonts/Blacksword.otf") format("opentype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Pacifico";
   src: url("./assets/fonts/Pacifico-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Neocrash";
   src: url("./assets/fonts/NeocrashPersonalUseOnlyReg-E45Me.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Sdglitch";
   src: url("./assets/fonts/Sdglitchrobotdemo-GOPdO.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "TechnoCharm";
   src: url("./assets/fonts/TechnoCharmDemoVersionRegular-ALaZm.otf") format("opentype");
+  font-display: swap;
 }
 
 .wrapper {

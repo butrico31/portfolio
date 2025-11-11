@@ -58,17 +58,22 @@ export default function Hero() {
     useEffect(() => {
         if (particles.length === 0) return;
 
-        // Clean up existing animations
         ScrollTrigger.getAll().forEach(t => t.kill());
 
         particlesRef.current.forEach((el, i) => {
             const p = particles[i];
             if (!el || !p) return;
 
-            gsap.set(el, { width: 8, height: 8, borderRadius: '50%', yPercent: 0 });
+            gsap.set(el, { 
+                width: 8, 
+                height: 8, 
+                borderRadius: '50%', 
+                yPercent: 0,
+                force3D: true,
+                willChange: 'transform, width, height'
+            });
 
             const scrollLen = p.scroll ?? 300;
-            const startOffset = 200 + i * 30;
 
             gsap.fromTo(
                 el,
@@ -83,7 +88,8 @@ export default function Hero() {
                         trigger: containerRef.current,
                         start: `top top`,
                         end: `+=${scrollLen}`,
-                        scrub: true,
+                        scrub: 1,
+                        invalidateOnRefresh: true
                     },
                 }
             );
