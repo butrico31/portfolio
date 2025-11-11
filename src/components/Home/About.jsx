@@ -150,6 +150,7 @@ const CircuitBackground = styled.div`
 const Titulo = styled.h2`
     font-size: 2.5rem;
     font-weight: 500;
+    font-family: 'Sdglitch', sans-serif;
     color: rgba(168,85,247,0.95);
     margin-bottom: 1rem;
     position: relative;
@@ -162,7 +163,8 @@ const Titulo = styled.h2`
 
 const AboutParagraph = styled.p`
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.8;
+    font-family: 'Inter', sans-serif;
     text-align: center;
     width: 80%;
     max-width: 900px;

@@ -55,6 +55,7 @@ const Container = styled.section`
 const Title = styled.h2`
     font-size: 2.5rem;
     font-weight: 700;
+    font-family: 'Sdglitch', sans-serif;
     color: var(--text-color);
     margin-bottom: 4rem;
     text-align: center;
@@ -116,13 +117,15 @@ const CodeIcon = styled.span`
 const ProjectTitle = styled.h3`
     font-size: 1.5rem;
     font-weight: 600;
+    font-family: 'TechnoCharm', sans-serif;
     color: rgba(168,85,247,0.95);
     margin: 0;
 `;
 
 const ProjectDescription = styled.p`
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.8;
+    font-family: 'Inter', sans-serif;
     color: rgba(230, 230, 230, 0.8);
     margin: 0;
     flex: 1;

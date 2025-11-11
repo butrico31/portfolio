@@ -116,7 +116,8 @@ const CardList = styled.ul`
     list-style-type: circle;
     color: rgba(230, 230, 230, 0.8);
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.8;
+    font-family: 'Inter', sans-serif;
     align-self: flex-start;
     margin-left: 30px;
 `;
@@ -124,12 +125,14 @@ const CardList = styled.ul`
 const CardTitle = styled.h3`
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    font-family: 'TechnoCharm', sans-serif;
     color: rgba(168,85,247,0.95);
 `;
 
 const Title = styled.h2`
     font-size: 2rem;
     margin-bottom: 2rem;
+    font-family: 'Sdglitch', sans-serif;
     color: rgba(168,85,247,0.95);
     
     @media (max-width: 768px) {

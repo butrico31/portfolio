@@ -11,7 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   color: var(--text-color);
 }
 
@@ -39,14 +39,27 @@ body {
 
 @font-face {
   font-family: "Blacksword";
-  src: local("Blacksword"),
-    url("./assets/fonts/Blacksword.otf") format("truetype");
+  src: url("./assets/fonts/Blacksword.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Pacifico";
-  src: local("Pacifico"),
-    url("./assets/fonts/Pacifico-Regular.ttf") format("truetype");
+  src: url("./assets/fonts/Pacifico-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Neocrash";
+  src: url("./assets/fonts/NeocrashPersonalUseOnlyReg-E45Me.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Sdglitch";
+  src: url("./assets/fonts/Sdglitchrobotdemo-GOPdO.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TechnoCharm";
+  src: url("./assets/fonts/TechnoCharmDemoVersionRegular-ALaZm.otf") format("opentype");
 }
 
 .wrapper {

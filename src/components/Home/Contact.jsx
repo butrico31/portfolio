@@ -43,6 +43,7 @@ const Container = styled.section`
 const Title = styled.h2`
     font-size: 2.5rem;
     font-weight: 700;
+    font-family: 'Neocrash', sans-serif;
     color: var(--text-color);
     margin-bottom: 1.5rem;
     
@@ -54,6 +55,7 @@ const Title = styled.h2`
 const Description = styled.p`
     font-size: 1.1rem;
     line-height: 1.8;
+    font-family: 'Inter', sans-serif;
     color: rgba(230, 230, 230, 0.8);
     max-width: 700px;
     margin-bottom: 2.5rem;

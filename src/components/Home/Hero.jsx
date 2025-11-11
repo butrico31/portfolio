@@ -16,10 +16,10 @@ export default function Hero() {
     const [typingSpeed, setTypingSpeed] = React.useState(150);
 
     const phrases = [
-        'React Enthusiast',
-        'Vue.js Developer',
-        'Node.js Expert',
-        'Spring Boot Dev'
+        'React Student',
+        'Vue.js Enthusiast',
+        'Node.js Developer',
+        'Full Stack Developer'
     ];
 
     // Generate random particles based on screen size
@@ -211,6 +211,7 @@ const Greeting = styled.h2`
 
 const Name = styled.span`
     font-weight: 700;
+    font-family: 'Neocrash', sans-serif;
     background: linear-gradient(135deg, #6c13be 0%, rgba(126,58,242,1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -228,6 +229,7 @@ const TypewriterWrapper = styled.div`
 const TypewriterText = styled.h1`
     font-size: 2.2rem;
     font-weight: lighter;
+    font-family: 'TechnoCharm', sans-serif;
     color: var(--text-color);
     margin: 0;
     
@@ -255,6 +257,7 @@ const Cursor = styled.span`
 const Description = styled.p`
     font-size: 1.2rem;
     line-height: 1.8;
+    font-family: 'Inter', sans-serif;
     color: rgba(230, 230, 230, 0.8);
     max-width: 700px;
     margin: 0;

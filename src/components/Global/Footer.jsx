@@ -64,6 +64,7 @@ const SocialLink = styled.a`
 
 const Copyright = styled.p`
     font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
     color: rgba(230, 230, 230, 0.6);
     text-align: center;
     
