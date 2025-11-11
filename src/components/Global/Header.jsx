@@ -1,18 +1,19 @@
-import { NavLink } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
-import { createPortal } from "react-dom";
+import styled from "styled-components";
+import About from "../Home/About";
+import { Link } from "react-scroll";
 
 export default function Header() {
-    return createPortal(
+    return (
         <Nav>
-            <Logo>&lt;Butrico/&gt;</Logo>
+            <Logo href="#hero">&lt;Butrico/&gt;</Logo>
             
             <Links_containers>
-                <Link to='/oi'>Home</Link>
-                <Link to='/contato'>Contato</Link>
+                <NavLink to='about' href="#about">Sobre</NavLink>
+                <NavLink to='skills' href="#skills">Skills</NavLink>
+                <NavLink to='projects' href="#projects">Projetos</NavLink>
+                <NavLink to='contact' href="#contact">Contato</NavLink>
             </Links_containers>
-        </Nav>,
-        document.body
+        </Nav>
     )
 }
 
@@ -50,7 +51,7 @@ const Nav = styled.nav`
     }
 `;
 
-const Logo = styled.div`
+const Logo = styled.a`
     font-size: 1.5rem;
     font-weight: 700;
     background: linear-gradient(135deg, rgba(168,85,247,1) 0%, rgba(126,58,242,1) 100%);
@@ -59,19 +60,24 @@ const Logo = styled.div`
     background-clip: text;
     cursor: pointer;
     user-select: none;
+    text-decoration: none;
     
     @media (max-width: 480px) {
         font-size: 1.2rem;
     }
 `;
 
-const Link = styled(NavLink)`
+const NavLink = styled(Link)`
     color: white;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: inherit;
     transition: color 0.3s ease;
     
     &:hover {

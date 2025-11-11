@@ -143,7 +143,7 @@ export default function Hero() {
                     Vue.js, Node.js, Java e tecnologias modernas para web.
                 </Description>
                 <ButtonGroup>
-                    <PrimaryButton to="/projects">Ver Projetos</PrimaryButton>
+                    <PrimaryButton as="a" href="https://github.com/butrico31" target="_blank" rel="noopener noreferrer">Ver GitHub</PrimaryButton>
                     <SecondaryButton as="a" href="/Curriculo_Vinicius_Butrico_ATS.pdf" target="_blank" rel="noopener noreferrer">Baixar CV</SecondaryButton>
                 </ButtonGroup>
             </ContentWrapper>

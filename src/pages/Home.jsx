@@ -12,12 +12,22 @@ export default function Home() {
     return (
         <div>
             <Header />
-            <Hero />
-            <About />
-            <Skills />
-            <CodeDisplay />
-            <Projects />
-            <Contact />
+            <div id="hero">
+                <Hero />
+            </div>
+            <div id="about">
+                <About />
+            </div>
+            <div id="skills">
+                <Skills />
+                <CodeDisplay />
+            </div>
+            <div id="projects">
+                <Projects />
+            </div>
+            <div id="contact">
+                <Contact />
+            </div>
             <Footer />
         </div>
     )
