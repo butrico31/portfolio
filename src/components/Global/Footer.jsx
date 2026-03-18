@@ -14,9 +14,9 @@ export default function Footer() {
                         <FaLinkedin size={24} />
                     </SocialLink>
                 </SocialLinks>
-                
+
                 <Copyright>
-                    © 2025 Vinicius Butrico. Desenvolvido com React, Gsap e Styled-Components.
+                    © {new Date().getFullYear()} Vinicius Butrico. Desenvolvido com React, Gsap e Styled-Components.
                 </Copyright>
             </Content>
         </Container>
@@ -26,8 +26,8 @@ export default function Footer() {
 const Container = styled.footer`
     width: 100%;
     padding: 2rem;
-    background: rgba(10, 10, 11, 0.8);
-    border-top: 1px solid rgba(168,85,247,0.2);
+    background: var(--bg-footer);
+    border-top: 1px solid var(--footer-border);
 `;
 
 const Content = styled.div`
@@ -37,7 +37,7 @@ const Content = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    
+
     @media (max-width: 768px) {
         padding: 0 1rem;
     }
@@ -46,18 +46,18 @@ const Content = styled.div`
 const SocialLinks = styled.div`
     display: flex;
     gap: 2rem;
-    
+
     @media (max-width: 480px) {
         gap: 1.5rem;
     }
 `;
 
 const SocialLink = styled.a`
-    color: rgba(230, 230, 230, 0.7);
+    color: var(--text-secondary);
     transition: all 0.3s ease;
-    
+
     &:hover {
-        color: rgba(168,85,247,0.95);
+        color: var(--accent);
         transform: translateY(-3px);
     }
 `;
@@ -65,9 +65,9 @@ const SocialLink = styled.a`
 const Copyright = styled.p`
     font-size: 0.95rem;
     font-family: 'Inter', sans-serif;
-    color: rgba(230, 230, 230, 0.6);
+    color: var(--text-muted);
     text-align: center;
-    
+
     @media (max-width: 768px) {
         font-size: 0.85rem;
     }

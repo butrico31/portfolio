@@ -24,10 +24,10 @@ export default function Projects() {
                         <IconPlaceholder>
                             <CodeIcon>&lt;/&gt;</CodeIcon>
                         </IconPlaceholder>
-                        
+
                         <ProjectTitle>{project.title}</ProjectTitle>
                         <ProjectDescription>{project.description}</ProjectDescription>
-                        
+
                         <TagsContainer>
                             {project.tags.map((tag, idx) => (
                                 <Tag key={idx}>{tag}</Tag>
@@ -46,7 +46,7 @@ const Container = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     @media (max-width: 768px) {
         padding: 3rem 1.5rem;
     }
@@ -56,10 +56,10 @@ const Title = styled.h2`
     font-size: 2.5rem;
     font-weight: 700;
     font-family: 'Sdglitch', sans-serif;
-    color: rgba(168,85,247,0.95);
+    color: var(--accent);
     margin-bottom: 4rem;
     text-align: center;
-    
+
     @media (max-width: 768px) {
         font-size: 2rem;
         margin-bottom: 3rem;
@@ -72,7 +72,7 @@ const ProjectsGrid = styled.div`
     gap: 2.5rem;
     max-width: 1200px;
     width: 100%;
-    
+
     @media (max-width: 450px) {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -80,27 +80,27 @@ const ProjectsGrid = styled.div`
 `;
 
 const ProjectCard = styled.div`
-    background: linear-gradient(135deg, rgba(40, 42, 54, 0.9) 0%, rgba(33, 34, 44, 0.9) 100%);
-    border: 1px solid rgba(168, 85, 247, 0.2);
+    background: linear-gradient(135deg, var(--accent-card-bg) 0%, var(--accent-card-inner) 100%);
+    border: 1px solid var(--footer-border);
     border-radius: 12px;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
     transition: all 0.3s ease;
-    
+
     &:hover {
         transform: translateY(-8px);
-        border-color: rgba(168, 85, 247, 0.5);
-        box-shadow: 0 12px 40px rgba(168, 85, 247, 0.3);
+        border-color: var(--accent-border);
+        box-shadow: 0 12px 40px var(--accent-shadow);
     }
 `;
 
 const IconPlaceholder = styled.div`
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, rgba(33, 34, 44, 0.8) 0%, rgba(25, 26, 33, 0.8) 100%);
-    border: 1px solid rgba(168, 85, 247, 0.3);
+    background: var(--accent-card-inner);
+    border: 1px solid var(--accent-border);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -110,7 +110,7 @@ const IconPlaceholder = styled.div`
 
 const CodeIcon = styled.span`
     font-size: 2rem;
-    color: rgba(168,85,247,0.95);
+    color: var(--accent);
     font-weight: 300;
 `;
 
@@ -118,7 +118,7 @@ const ProjectTitle = styled.h3`
     font-size: 1.5rem;
     font-weight: 600;
     font-family: 'TechnoCharm', sans-serif;
-    color: rgba(168,85,247,0.95);
+    color: var(--accent);
     margin: 0;
 `;
 
@@ -126,7 +126,7 @@ const ProjectDescription = styled.p`
     font-size: 0.95rem;
     line-height: 1.8;
     font-family: 'Inter', sans-serif;
-    color: rgba(230, 230, 230, 0.8);
+    color: var(--text-secondary);
     margin: 0;
     flex: 1;
 `;
@@ -139,12 +139,10 @@ const TagsContainer = styled.div`
 
 const Tag = styled.span`
     padding: 0.4rem 0.8rem;
-    background: rgba(168,85,247,0.15);
-    border: 1px solid rgba(168,85,247,0.3);
+    background: var(--accent-faint);
+    border: 1px solid var(--accent-border);
     border-radius: 6px;
     font-size: 0.8rem;
-    color: rgba(168,85,247,0.95);
+    color: var(--accent);
     font-weight: 500;
 `;
-
-

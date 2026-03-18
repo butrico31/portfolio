@@ -27,7 +27,7 @@ export default function Hero() {
         const width = window.innerWidth;
         // Responsive: more particles on wider screens
         const count = width < 768 ? 8 : width < 1200 ? 12 : 18;
-        
+
         const newParticles = [];
         for (let i = 0; i < count; i++) {
             newParticles.push({
@@ -64,10 +64,10 @@ export default function Hero() {
             const p = particles[i];
             if (!el || !p) return;
 
-            gsap.set(el, { 
-                width: 8, 
-                height: 8, 
-                borderRadius: '50%', 
+            gsap.set(el, {
+                width: 8,
+                height: 8,
+                borderRadius: '50%',
                 yPercent: 0,
                 force3D: true,
                 willChange: 'transform, width, height'
@@ -167,10 +167,11 @@ const Container = styled.section`
     overflow: hidden;
     background: linear-gradient(
         180deg,
-        #0a0a0b 0%,
-        #1a1b1e 50%,
-        #2a2b2e 100%
+        var(--bg-body) 0%,
+        var(--bg-body2) 50%,
+        var(--bg-body3) 100%
     );
+    transition: background 0.3s ease;
 `
 
 const ParticlesWrapper = styled.div`
@@ -186,8 +187,8 @@ const Particle = styled.div`
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: linear-gradient(180deg, rgba(168,85,247,0.95) 0%, rgba(126,58,242,0.95) 100%);
-    box-shadow: 0 6px 18px rgba(126,58,242,0.4);
+    background: linear-gradient(180deg, var(--accent-1) 0%, var(--accent-2) 100%);
+    box-shadow: 0 6px 18px var(--particle-shadow);
     opacity: 0.95;
     will-change: transform, width, height;
 `;
@@ -209,7 +210,7 @@ const Greeting = styled.h2`
     font-weight: 400;
     color: var(--text-color);
     margin: 0;
-    
+
     @media (max-width: 768px) {
         font-size: 1.8rem;
     }
@@ -218,7 +219,7 @@ const Greeting = styled.h2`
 const Name = styled.span`
     font-weight: 700;
     font-family: 'Neocrash', sans-serif;
-    background: linear-gradient(135deg, #6c13be 0%, rgba(126,58,242,1) 100%);
+    background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -238,7 +239,7 @@ const TypewriterText = styled.h1`
     font-family: 'TechnoCharm', sans-serif;
     color: var(--text-color);
     margin: 0;
-    
+
     @media (max-width: 768px) {
         font-size: 1.5rem;
     }
@@ -247,14 +248,14 @@ const TypewriterText = styled.h1`
 const Cursor = styled.span`
     font-size: 2.2rem;
     font-weight: 300;
-    color: rgba(168,85,247,0.95);
+    color: var(--accent);
     animation: blink 1s infinite;
-    
+
     @keyframes blink {
         0%, 50% { opacity: 1; }
         51%, 100% { opacity: 0; }
     }
-    
+
     @media (max-width: 768px) {
         font-size: 1.5rem;
     }
@@ -264,10 +265,10 @@ const Description = styled.p`
     font-size: 1.2rem;
     line-height: 1.8;
     font-family: 'Inter', sans-serif;
-    color: rgba(230, 230, 230, 0.8);
+    color: var(--text-secondary);
     max-width: 700px;
     margin: 0;
-    
+
     @media (max-width: 768px) {
         font-size: 1rem;
     }
@@ -277,7 +278,7 @@ const ButtonGroup = styled.div`
     display: flex;
     gap: 1.5rem;
     margin-top: 1rem;
-    
+
     @media (max-width: 768px) {
         flex-direction: column;
         width: 100%;
@@ -289,20 +290,20 @@ const PrimaryButton = styled(NavLink)`
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
     font-weight: 600;
-    background: linear-gradient(135deg, rgba(168,85,247,1) 0%, rgba(126,58,242,1) 100%);
+    background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%);
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(168,85,247,0.3);
-    
+    box-shadow: 0 4px 15px var(--accent-shadow);
+
     &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(168,85,247,0.4);
+        box-shadow: 0 6px 20px var(--accent-shadow-hover);
     }
-    
+
     @media (max-width: 768px) {
         width: 100%;
         padding: 0.9rem 2rem;
@@ -315,18 +316,18 @@ const SecondaryButton = styled(NavLink)`
     font-weight: 600;
     background: transparent;
     color: var(--text-color);
-    border: 2px solid rgba(168,85,247,0.5);
+    border: 2px solid var(--accent-border);
     border-radius: 8px;
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s ease;
-    
+
     &:hover {
-        border-color: rgba(168,85,247,1);
-        background: rgba(168,85,247,0.1);
+        border-color: var(--accent-1);
+        background: var(--accent-hover-bg);
         transform: translateY(-2px);
     }
-    
+
     @media (max-width: 768px) {
         width: 100%;
         padding: 0.9rem 2rem;

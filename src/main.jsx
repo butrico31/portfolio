@@ -4,22 +4,19 @@ import { RouterProvider } from "react-router-dom"
 import { router } from "./router"
 import gsap from "gsap"
 import { ScrollSmoother } from "gsap/ScrollSmoother"
+import { ThemeProvider } from "./context/ThemeContext"
 
 gsap.registerPlugin(ScrollSmoother)
 
 function App() {
   useEffect(() => {
-
     const smoother = ScrollSmoother.create({
       wrapper: ".wrapper",
       content: ".content",
       smooth: 1.2,
       effects: true,
     })
-
-    return () => {
-      if (smoother) smoother.kill()
-    }
+    return () => { if (smoother) smoother.kill() }
   }, [])
 
   return (
@@ -35,6 +32,8 @@ function App() {
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 )
