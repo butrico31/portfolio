@@ -40,6 +40,16 @@
   --code-border: #191a21;
   --code-hover: rgba(68, 71, 90, 0.3);
 
+  /* Syntax highlighting - Dracula */
+  --syn-keyword: #ff79c6;
+  --syn-string: #f1fa8c;
+  --syn-number: #bd93f9;
+  --syn-key: #8be9fd;
+  --syn-type: #8be9fd;
+  --syn-comment: #6272a4;
+  --syn-punctuation: #ff79c6;
+  --syn-operator: #ff79c6;
+
   /* Misc */
   --footer-border: rgba(168, 85, 247, 0.2);
   --particle-shadow: rgba(126, 58, 242, 0.4);
@@ -74,12 +84,22 @@
   --text-muted: rgba(25, 30, 60, 0.6);
   --nav-text: #1a1a2e;
 
-  --code-bg: #eef2ff;
-  --code-header: #e0e8ff;
-  --code-text: #1a1a2e;
-  --code-muted: #4a5080;
-  --code-border: #c8d5f0;
-  --code-hover: rgba(37, 99, 235, 0.06);
+  --code-bg: #fafafa;
+  --code-header: #f0f0f0;
+  --code-text: #383a42;
+  --code-muted: #9d9d9f;
+  --code-border: #e5e5e6;
+  --code-hover: rgba(56, 58, 66, 0.06);
+
+  /* Syntax highlighting - Atom One Light */
+  --syn-keyword: #a626a4;
+  --syn-string: #50a14f;
+  --syn-number: #986801;
+  --syn-key: #e45649;
+  --syn-type: #4078f2;
+  --syn-comment: #a0a1a7;
+  --syn-punctuation: #383a42;
+  --syn-operator: #0184bc;
 
   --footer-border: rgba(37, 99, 235, 0.2);
   --particle-shadow: rgba(29, 78, 216, 0.4);

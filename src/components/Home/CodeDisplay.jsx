@@ -1,6 +1,80 @@
 import styled from "styled-components";
 import React, { useState } from "react";
 
+const TOKEN_STYLE = {
+    keyword:     'var(--syn-keyword)',
+    string:      'var(--syn-string)',
+    number:      'var(--syn-number)',
+    key:         'var(--syn-key)',
+    type:        'var(--syn-type)',
+    comment:     'var(--syn-comment)',
+    punctuation: 'var(--syn-punctuation)',
+    operator:    'var(--syn-operator)',
+    text:        'var(--code-text)',
+};
+
+const TS_KEYWORDS = ['interface', 'const', 'export', 'default', 'string', 'number', 'boolean', 'import', 'from', 'return', 'type'];
+const TS_TYPES    = ['Developer'];
+
+function tokenizeJSON(line) {
+    const tokens = [];
+    let rem = line;
+    const patterns = [
+        { type: 'key',         re: /^("(?:[^"\\]|\\.)*")(?=\s*:)/ },
+        { type: 'string',      re: /^"(?:[^"\\]|\\.)*"/ },
+        { type: 'number',      re: /^-?\d+(?:\.\d+)?/ },
+        { type: 'keyword',     re: /^\b(true|false|null)\b/ },
+        { type: 'punctuation', re: /^[{}[\],:]/ },
+        { type: 'text',        re: /^./ },
+    ];
+    while (rem.length > 0) {
+        for (const { type, re } of patterns) {
+            const m = rem.match(re);
+            if (m) { tokens.push({ type, text: m[0] }); rem = rem.slice(m[0].length); break; }
+        }
+    }
+    return tokens;
+}
+
+function tokenizeTS(line) {
+    const tokens = [];
+    let rem = line;
+    const kwRe   = new RegExp(`^\\b(${TS_KEYWORDS.join('|')})\\b`);
+    const typeRe  = new RegExp(`^\\b(${TS_TYPES.join('|')})\\b`);
+    const patterns = [
+        { type: 'comment',     re: /^\/\/.*/ },
+        { type: 'string',      re: /^'(?:[^'\\]|\\.)*'/ },
+        { type: 'string',      re: /^"(?:[^"\\]|\\.)*"/ },
+        { type: 'number',      re: /^\b\d+(?:\.\d+)?\b/ },
+        { type: 'keyword',     re: kwRe },
+        { type: 'type',        re: typeRe },
+        { type: 'key',         re: /^\b\w+\b(?=\s*[?:](?!:))/ },
+        { type: 'operator',    re: /^[=><]/ },
+        { type: 'punctuation', re: /^[{}[\];,().]/ },
+        { type: 'text',        re: /^\w+/ },
+        { type: 'text',        re: /^./ },
+    ];
+    while (rem.length > 0) {
+        for (const { type, re } of patterns) {
+            const m = rem.match(re);
+            if (m) { tokens.push({ type, text: m[0] }); rem = rem.slice(m[0].length); break; }
+        }
+    }
+    return tokens;
+}
+
+function HighlightedLine({ line, fileType }) {
+    if (line.trim() === '') return <span> </span>;
+    const tokens = fileType === 'json' ? tokenizeJSON(line) : tokenizeTS(line);
+    return (
+        <>
+            {tokens.map((tok, i) => (
+                <span key={i} style={{ color: TOKEN_STYLE[tok.type] }}>{tok.text}</span>
+            ))}
+        </>
+    );
+}
+
 export default function CodeDisplay() {
     const [activeTab, setActiveTab] = useState("portfolio.json");
 
@@ -9,7 +83,7 @@ export default function CodeDisplay() {
             '{',
             '    "name": "Vinícius Butrico",',
             '    "role": "Full Stack Developer",',
-            '    "experience": "~4 Meses",',
+            '    "experience": "~8 Meses",',
             '    "technologies": ["React", "Node.js", "JavaScript", "Docker"],',
             '    "projects": {',
             '        "completed": 6,',
@@ -38,11 +112,13 @@ export default function CodeDisplay() {
         ],
     };
 
+    const fileType = activeTab.endsWith('.json') ? 'json' : 'ts';
+
     return (
         <Container>
-            <Header>
+            <EditorHeader>
                 <VSCodeTitle>VS Code - Portfolio</VSCodeTitle>
-            </Header>
+            </EditorHeader>
 
             <TabsContainer>
                 {Object.keys(codeFiles).map((filename) => (
@@ -60,7 +136,9 @@ export default function CodeDisplay() {
                 {codeFiles[activeTab].map((line, index) => (
                     <CodeLine key={index}>
                         <LineNumber>{index + 1}</LineNumber>
-                        <LineContent>{line}</LineContent>
+                        <LineContent>
+                            <HighlightedLine line={line} fileType={fileType} />
+                        </LineContent>
                     </CodeLine>
                 ))}
             </CodeEditor>
@@ -84,7 +162,7 @@ const Container = styled.section`
     }
 `;
 
-const Header = styled.div`
+const EditorHeader = styled.div`
     background: var(--code-header);
     padding: 0.4rem 0.8rem;
     display: flex;
@@ -180,13 +258,13 @@ const LineNumber = styled.span`
     color: var(--code-muted);
     user-select: none;
     font-size: 0.8rem;
+    flex-shrink: 0;
 `;
 
 const LineContent = styled.pre`
     flex: 1;
     margin: 0;
     padding-right: 0.8rem;
-    color: var(--code-text);
     font-family: inherit;
     white-space: pre;
 `;

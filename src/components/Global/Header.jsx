@@ -11,13 +11,28 @@ export default function Header() {
             <Logo href="#hero">&lt;Butrico/&gt;</Logo>
 
             <Links_containers>
+            <ThemeToggle
+                    onClick={toggleTheme}
+                    aria-label={isDark ? "Ativar modo claro" : "Ativar modo escuro"}
+                    aria-pressed={isDark}
+                >
+                    <ThemeTrack $isDark={isDark}>
+                        <ThemeIcon $position="left" $isActive={!isDark}>
+                            <FaSun size={12} />
+                        </ThemeIcon>
+                        <ThemeIcon $position="right" $isActive={isDark}>
+                            <FaMoon size={12} />
+                        </ThemeIcon>
+                        <ThemeThumb $isDark={isDark}>
+                            {isDark ? <FaMoon size={13} /> : <FaSun size={13} />}
+                        </ThemeThumb>
+                    </ThemeTrack>
+                </ThemeToggle>
                 <NavLink to='about' href="#about">Sobre</NavLink>
                 <NavLink to='skills' href="#skills">Skills</NavLink>
                 <NavLink to='projects' href="#projects">Projetos</NavLink>
                 <NavLink to='contact' href="#contact">Contato</NavLink>
-                <ThemeToggle onClick={toggleTheme} aria-label="Toggle theme">
-                    {isDark ? <FaSun size={18} /> : <FaMoon size={18} />}
-                </ThemeToggle>
+                
             </Links_containers>
         </Nav>
     )
@@ -97,27 +112,68 @@ const NavLink = styled(Link)`
 `;
 
 const ThemeToggle = styled.button`
-    background: none;
-    border: 1px solid var(--accent-border);
-    border-radius: 50%;
-    width: 36px;
+    background: transparent;
+    border: none;
+    width: 64px;
     height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: var(--accent);
-    transition: all 0.3s ease;
     padding: 0;
     flex-shrink: 0;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 
     &:hover {
-        background: var(--accent-hover-bg);
-        border-color: var(--accent-border-hover);
-        transform: rotate(20deg);
+        transform: translateY(-1px);
     }
 
-    svg {
-        color: var(--accent);
+    &:focus-visible > div {
+        box-shadow: 0 0 0 3px var(--accent-faint);
     }
+`;
+
+const ThemeTrack = styled.div`
+    width: 62px;
+    height: 32px;
+    border-radius: 999px;
+    border: 1px solid var(--accent-border);
+    position: relative;
+    overflow: hidden;
+    background: ${props => props.$isDark
+        ? "linear-gradient(120deg, rgba(20, 24, 38, 0.95) 0%, rgba(40, 45, 64, 0.95) 100%)"
+        : "linear-gradient(120deg, rgba(245, 249, 255, 0.95) 0%, rgba(229, 238, 255, 0.95) 100%)"};
+    transition: background 0.4s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.12);
+`;
+
+const ThemeIcon = styled.span`
+    position: absolute;
+    top: 50%;
+    ${props => props.$position === "left" ? "left: 9px;" : "right: 9px;"}
+    transform: translateY(-50%);
+    color: var(--accent);
+    opacity: ${props => props.$isActive ? 1 : 0.4};
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+const ThemeThumb = styled.span`
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: ${props => props.$isDark ? "34px" : "2px"};
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%);
+    box-shadow: 0 4px 12px var(--accent-shadow);
+    transition: left 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
 `;
