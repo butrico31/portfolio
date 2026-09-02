@@ -1,36 +1,18 @@
-<!-- @dsCard group="Portfólio" viewport="1440x900" name="Portfólio dev — Vinicius Butrico" subtitle="Terminal escuro, partículas em todo o site, cards de projeto empilhando" -->
-<!doctype html><html lang="pt-BR" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vinicius Butrico — Desenvolvedor Full Stack</title>
-<link rel="stylesheet" href="../../styles.css">
-<style>
-body{background:var(--bt-bg);background-image:var(--bt-page-gradient);background-attachment:fixed;color:var(--bt-text);overflow-x:hidden}
-.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4.2vw,56px)}
-.mono{font:500 var(--text-label)/1.4 var(--font-mono);letter-spacing:var(--tracking-label);text-transform:uppercase}
-.dim{color:var(--bt-text-muted)}
-.amber{color:var(--bt-accent-1)}
-.rule{height:1px;background:rgba(230,230,230,.12)}
-.sec{padding:clamp(72px,9vw,132px) 0}
-.kv{display:grid;grid-template-columns:minmax(120px,180px) 1fr;gap:10px 26px;padding:10px 0;border-bottom:1px solid rgba(230,230,230,.1)}
-a{color:var(--bt-text);border-bottom-color:var(--bt-accent-border)}
-a:hover{color:var(--bt-accent-1);border-bottom-color:var(--bt-accent-1)}
-@keyframes mono-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:.15}}
-@media (max-width:900px){.cols2{grid-template-columns:1fr!important}}
-</style>
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="../../_ds_bundle.js"></script>
-</head><body>
-<div id="root"></div>
-<script type="text/babel" src="cv.jsx"></script>
-<script type="text/babel" src="Chrome.jsx"></script>
-<script type="text/babel" src="Intro.jsx"></script>
-<script type="text/babel" src="Experience.jsx"></script>
-<script type="text/babel" src="Projects.jsx"></script>
-<script type="text/babel" src="Skills.jsx"></script>
-<script type="text/babel" src="Contact.jsx"></script>
-<script type="text/babel" src="dev-app.jsx"></script>
-</body></html>
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/3d-computer.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vinicius Butrico — Desenvolvedor Full Stack</title>
+    
+    <meta
+      name="description"
+      content="Portfólio de Vinicius Butrico de Freitas — desenvolvedor full stack em Mogi Guaçu/SP. APIs REST, integrações de pagamento e automações."
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
