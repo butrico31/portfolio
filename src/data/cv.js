@@ -14,7 +14,7 @@ export const cv = {
     'Agentes de IA',
   ],
   local: 'Mogi Guaçu · SP',
-  email: 'butrico0@gmail.com',
+  email: 'vinicius@butrico.com.br',
   telefone: '(19) 98975-1609',
   github: 'github.com/butrico31',
   linkedin: 'linkedin.com/in/vinicius-butrico-de-freitas-82912a240',
@@ -30,7 +30,7 @@ export const cv = {
     {
       cargo: 'Estagiário Desenvolvedor Salesforce',
       empresa: 'BeeCloud Solutions',
-      periodo: 'abr/2026 — atual',
+      periodo: 'abr/2026 — out/2026',
       bullets: [
         'Desenvolvimento e customização em Sales Cloud e Service Cloud.',
         'Automações com Flow Builder e Process Builder.',

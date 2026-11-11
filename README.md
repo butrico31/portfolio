@@ -1,16 +1,34 @@
-# React + Vite
+# Vinicius Butrico / Personal Interface
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio em React e JSX, com identidade visual inspirada no README do GitHub: circuitos, ciano, magenta, tipografia local e glitch no nome. O NeuroCorp é o projeto principal.
 
-Currently, two official plugins are available:
+## Desenvolvimento
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```sh
+npm install
+npm run dev
+```
 
-## React Compiler
+No PowerShell com execução de scripts desabilitada, use `npm.cmd`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Build
 
-## Expanding the ESLint configuration
+```sh
+npm run build
+npm run preview
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+O Vite gera a versão de produção em `dist/`. Edite os arquivos em `src/`, pois o build substitui os arquivos gerados.
+
+## Onde editar
+
+- `src/App.jsx`: estrutura, apresentação e contato.
+- `src/data/cv.js`: projetos anteriores, experiência e links profissionais.
+- `src/components/NeuroPreview.jsx`: prévia interativa do NeuroCorp, com atendimento, pipeline e arquitetura.
+- `src/components/Circuit.jsx`: ilustração vetorial do circuito.
+- `src/components/motion/GlitchText.jsx`: efeito do nome em React e CSS.
+- `src/components/motion/PageAtmosphere.jsx`: circuitos decorativos nas seções e estrelas em camadas que sobem com a rolagem, sem capturar cliques.
+- `src/hooks/usePortfolioMotion.js`: entrada em sequência, desenho dos circuitos, sinais em movimento, revelações no scroll e interação dos links com GSAP e ScrollTrigger.
+- `src/styles/interface.css`: identidade visual, responsividade e movimento reduzido.
+
+A prévia do NeuroCorp é conceitual, usa dados fictícios e não se conecta ao sistema real. Os links dos quatro módulos levam aos respectivos repositórios. Os efeitos ficam ligados, respeitando a preferência de movimento reduzido do sistema. As fontes estão em `public/fonts`, sem dependência de serviços externos.
