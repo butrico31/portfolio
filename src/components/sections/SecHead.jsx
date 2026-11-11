@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Mono } from '../../styles/primitives'
+import { DecodeText } from '../motion/DecodeText'
 
 const Header = styled.header`
   display: grid;
@@ -34,7 +35,9 @@ export function SecHead({ n, label, title, note }) {
         <Mono $dim>{label}</Mono>
         <Mono $accent>{n}</Mono>
       </Row>
-      <Title>{title}</Title>
+      <Title>
+        <DecodeText text={title} />
+      </Title>
       {note && <Note>{note}</Note>}
     </Header>
   )
