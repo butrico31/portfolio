@@ -1,18 +1,29 @@
 <!doctype html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR" data-theme="dark" data-type="software" data-radius="sharp" data-buttons="solid" data-motion="on">
   <head>
     <meta charset="UTF-8" />
-    <meta name="theme-color" content="#0b0f15" />
+    <meta name="theme-color" content="#080c0e" />
+    <meta name="page-type" content="software" />
+    <meta name="site-kind" content="software" />
+    <meta property="og:title" content="Vinicius Butrico — Desenvolvedor Full Stack" />
+    <meta property="og:description" content="Produtos web, APIs e automações. Conheça os projetos de Vinicius Butrico." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://butrico.com.br/share-cyberpunk.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://butrico.com.br/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/assets/system.css" />
+    <link rel="stylesheet" href="/assets/motion/motion.css" />
+    <link rel="modulepreload" href="/assets/moments/moments.js" />
+    <link rel="modulepreload" href="/assets/moments/lib.js" />
+    <link rel="modulepreload" href="/assets/moments/liquid-type/moment.js" />
+    <link rel="modulepreload" href="/assets/moments/line-carries-colour/moment.js" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link
-      rel="preload"
-      href="/fonts/Neocrash.ttf"
-      as="font"
-      type="font/ttf"
-      crossorigin
-    />
+    <link rel="preload" href="/fonts/Neocrash.ttf" as="font" type="font/ttf" crossorigin />
+    <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vinicius Butrico — Desenvolvimento & Sistemas</title>
+    <title>Vinicius Butrico — Desenvolvedor Full Stack</title>
 
     <meta
       name="description"
@@ -20,7 +31,9 @@
     />
   </head>
   <body>
+    <!-- Software portfolio: graphite/lime/cyan, Urbanist + DM Mono, client-requested Neocrash name and split hero. Orbital Three.js core; liquid-type and line-carries-colour moments. -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/portfolio-motion.js"></script>
   </body>
 </html>

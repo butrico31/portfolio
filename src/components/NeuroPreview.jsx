@@ -12,6 +12,19 @@ const repos = [
 export function NeuroPreview({ motion = true }) {
   const [view, setView] = useState(0)
   const contentRef = useRef(null)
+  const previewRef = useRef(null)
+
+  useLayoutEffect(() => {
+    const resize = () => {
+      previewRef.current.style.setProperty(
+        '--preview-aspect',
+        `${window.innerWidth} / ${window.innerHeight}`,
+      )
+    }
+    resize()
+    window.addEventListener('resize', resize)
+    return () => window.removeEventListener('resize', resize)
+  }, [])
 
   useLayoutEffect(() => {
     if (!motion) return
@@ -36,7 +49,7 @@ export function NeuroPreview({ motion = true }) {
     return () => media.revert()
   }, [view, motion])
   return (
-    <div className="neuro-preview">
+    <div className="neuro-preview" data-ui="neurocorp" ref={previewRef}>
       <div className="preview-toolbar">
         <span className="preview-logo">
           <span aria-hidden="true">✳</span> neurocorp
@@ -142,7 +155,7 @@ export function NeuroPreview({ motion = true }) {
                   <h4>
                     <i
                       style={{
-                        background: ['#9b87ca', '#5fa4c9', '#c59a57'][i],
+                        background: ['#73e9e1', '#e5ff59', '#c9d8cc'][i],
                       }}
                     />
                     {label}

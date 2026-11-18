@@ -10,8 +10,7 @@ function flatten(node) {
 export function GlitchText({
   children,
   text,
-  font,
-  gradient = 'var(--bt-gradient)',
+  gradient = 'linear-gradient(110deg, var(--accent), var(--cyan))',
   intensity = 1,
   as: Element = 'span',
   className = '',
@@ -27,7 +26,6 @@ export function GlitchText({
       className={`glitch-text ${className}`}
       data-glitch={label}
       style={{
-        '--glitch-font': font,
         '--glitch-opacity': 0.85 * intensity,
         '--scan-opacity': 0.25 * intensity,
         backgroundImage: gradient,
